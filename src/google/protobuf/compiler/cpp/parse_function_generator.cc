@@ -1371,7 +1371,7 @@ void ParseFunctionGenerator::GenerateFieldBody(
         format.Set("enum_type",
                    QualifiedClassName(field->enum_type(), options_));
         format(
-            "$uint64$ val = ::$proto_ns$::internal::ReadVarint64(&ptr);\n"
+            "$int32$ val = ::$proto_ns$::internal::ReadVarint32(&ptr);\n"
             "CHK_(ptr);\n");
         if (!HasPreservingUnknownEnumSemantics(field)) {
           format("if (PROTOBUF_PREDICT_TRUE($enum_type$_IsValid(val))) {\n");
